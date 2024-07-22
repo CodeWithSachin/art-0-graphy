@@ -121,7 +121,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
 										alt="user"
 										width={30}
 										height={30}
-										className="w-[30px] aspect-square cursor-pointer rounded-full aspect-square object-cover"
+										className="w-[30px] aspect-square cursor-pointer rounded-full object-cover"
 										style={{
 											border: activeItem === 5 ? "2px solid #37a39a" : "none",
 										}}

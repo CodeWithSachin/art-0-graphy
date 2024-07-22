@@ -75,7 +75,7 @@ const themes = {
 };
 
 // hex to rgba converter
-const hexToRgba = (hex, alpha) => {
+const hexToRgba = (hex: any, alpha: any) => {
 	const r = parseInt(hex.slice(1, 3), 16);
 	const g = parseInt(hex.slice(3, 5), 16);
 	const b = parseInt(hex.slice(5, 7), 16);
@@ -93,12 +93,12 @@ const AdminSideBar = () => {
 	const { theme, setTheme } = useTheme();
 
 	// handle on theme change event
-	const handleThemeChange = (e) => {
+	const handleThemeChange = (e: any) => {
 		setTheme(e.target.checked ? "dark" : "light");
 	};
 
 	// handle on image change event
-	const handleImageChange = (e) => {
+	const handleImageChange = (e: any) => {
 		setHasImage(e.target.checked);
 	};
 
@@ -116,7 +116,7 @@ const AdminSideBar = () => {
 		SubMenuExpandIcon: {
 			color: "#b6b7b9",
 		},
-		subMenuContent: ({ level }) => ({
+		subMenuContent: ({ level }: any) => ({
 			backgroundColor:
 				level === 0
 					? hexToRgba(
@@ -144,7 +144,7 @@ const AdminSideBar = () => {
 				color: themes[theme].menu.hover.color,
 			},
 		},
-		label: ({ open }) => ({
+		label: ({ open }: any) => ({
 			fontWeight: open ? 600 : undefined,
 		}),
 	};
@@ -250,32 +250,40 @@ const AdminSideBar = () => {
 									Data
 								</Typography>
 							</div>
-							<MenuItem
-								style={
-									dynamicStyle(theme, hasImage, collapsed, selected === "Users")
-										.button
-								}
-								icon={<GroupsIcon />}
-								active={selected === "Users"}
-								onClick={() => setSelected("Users")}
-							>
-								Users
-							</MenuItem>
-							<MenuItem
-								style={
-									dynamicStyle(
-										theme,
-										hasImage,
-										collapsed,
-										selected === "Analytics"
-									).button
-								}
-								icon={<BarChartOutlinedIcon />}
-								active={selected === "Analytics"}
-								onClick={() => setSelected("Analytics")}
-							>
-								Analytics
-							</MenuItem>
+							<Link href="/admin/users" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "Users"
+										).button
+									}
+									icon={<GroupsIcon />}
+									active={selected === "Users"}
+									onClick={() => setSelected("Users")}
+								>
+									Users
+								</MenuItem>
+							</Link>
+							<Link href="/admin/invoices" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "Invoices"
+										).button
+									}
+									icon={<BarChartOutlinedIcon />}
+									active={selected === "Invoices"}
+									onClick={() => setSelected("invoices")}
+								>
+									invoices
+								</MenuItem>
+							</Link>
 							<div style={{ padding: "0 24px", marginBottom: "8px" }}>
 								<Typography
 									variant="body2"
@@ -320,6 +328,64 @@ const AdminSideBar = () => {
 									onClick={() => setSelected("Live Courses")}
 								>
 									Live Courses
+								</MenuItem>
+							</Link>
+							<div style={{ padding: "0 24px", marginBottom: "8px" }}>
+								<Typography
+									variant="body2"
+									fontWeight={600}
+									style={{
+										opacity: collapsed ? 0 : 0.7,
+										letterSpacing: "0.5px",
+									}}
+								>
+									Customization
+								</Typography>
+							</div>
+							<Link href="/admin/create-course" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "Create Course"
+										).button
+									}
+									icon={<VideoCallIcon />}
+									active={selected === "Create Course"}
+									onClick={() => setSelected("Create Course")}
+								>
+									Create Course
+								</MenuItem>
+							</Link>
+							<div style={{ padding: "0 24px", marginBottom: "8px" }}>
+								<Typography
+									variant="body2"
+									fontWeight={600}
+									style={{
+										opacity: collapsed ? 0 : 0.7,
+										letterSpacing: "0.5px",
+									}}
+								>
+									Controllers
+								</Typography>
+							</div>
+							<Link href="/admin/teams" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "Teams"
+										).button
+									}
+									icon={<PeopleOutlinedIcon />}
+									active={selected === "Teams"}
+									onClick={() => setSelected("Teams")}
+								>
+									Manage Teams
 								</MenuItem>
 							</Link>
 						</Menu>

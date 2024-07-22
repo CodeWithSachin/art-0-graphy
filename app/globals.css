@@ -125,3 +125,6 @@ input[type="number"] {
 .ps-submenu-expand-icon {
 	display: none;
 }
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+	border-color: initial !important;
+}
