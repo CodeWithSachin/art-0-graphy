@@ -51,13 +51,16 @@ const ChangePassword: FC<Props> = ({ user }) => {
 				<form onSubmit={handleChangePassword}>
 					<div className="m-auto block pb-4 800px:w-[50%]">
 						<div className="w-full my-4">
-							<label htmlFor="userName" className="dark:text-white text-black">
+							<label
+								htmlFor="oldPassword"
+								className="dark:text-white text-black"
+							>
 								Old Password
 							</label>
 							<input
 								type="password"
-								name="userName"
-								id="userName"
+								name="oldPassword"
+								id="oldPassword"
 								required
 								value={oldPassword}
 								onChange={(e) => setOldPassword(e.target.value)}
@@ -65,13 +68,16 @@ const ChangePassword: FC<Props> = ({ user }) => {
 							/>
 						</div>
 						<div className="w-full my-4">
-							<label htmlFor="userName" className="dark:text-white text-black">
+							<label
+								htmlFor="newPassword"
+								className="dark:text-white text-black"
+							>
 								New Password
 							</label>
 							<input
 								type="password"
-								name="userName"
-								id="userName"
+								name="newPassword"
+								id="newPassword"
 								required
 								value={newPassword}
 								onChange={(e) => setNewPassword(e.target.value)}
@@ -79,13 +85,16 @@ const ChangePassword: FC<Props> = ({ user }) => {
 							/>
 						</div>
 						<div className="w-full my-4">
-							<label htmlFor="userName" className="dark:text-white text-black">
+							<label
+								htmlFor="confirmPassword"
+								className="dark:text-white text-black"
+							>
 								Confirm Password
 							</label>
 							<input
 								type="password"
-								name="userName"
-								id="userName"
+								name="confirmPassword"
+								id="confirmPassword"
 								required
 								value={confirmPassword}
 								onChange={(e) => setConfirmPassword(e.target.value)}

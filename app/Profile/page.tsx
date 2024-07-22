@@ -16,7 +16,7 @@ const Page: FC<Props> = () => {
 	return (
 		<Protected>
 			<Heading
-				title={`${user?.name} Profile`}
+				title={`${user?.name} Profile = ART-0-GRAPHY`}
 				description="ART-0-GRAPHY is a platform where user can learn and get help from tutors"
 				keywords="Next, react, angular, node, redux"
 			/>

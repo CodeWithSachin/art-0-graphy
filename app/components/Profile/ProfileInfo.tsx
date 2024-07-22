@@ -77,7 +77,7 @@ const ProfileInfo: FC<Props> = ({ user, avatar }) => {
 								: avatarDefault
 						}
 						alt=""
-						className="rounded-full w-[120px] h-[120px] cursor-pointer border-[3px] border-[#37a29a]"
+						className="rounded-full w-[120px] h-[120px] cursor-pointer border-[3px] border-[#37a29a] aspect-square object-cover"
 						width={120}
 						height={120}
 					/>
