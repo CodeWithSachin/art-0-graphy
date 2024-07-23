@@ -15,7 +15,7 @@ const Page: React.FC<Props> = ({}) => {
 				description="ART-0-GRAPHY is a platform where user can learn and get help from tutors"
 				keywords="Next, react, angular, node, redux"
 			/>
-			<div className="flex h-[200svh]">
+			<div className="flex h-screen">
 				<div className="1500px:w-[16%] wi-1/5">
 					<AdminSideBar />
 				</div>

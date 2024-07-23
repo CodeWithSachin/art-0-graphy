@@ -36,6 +36,7 @@ import { SidebarHeader } from "./AdminSideBarHeader";
 import { useSelector } from "react-redux";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { TbTableRow } from "react-icons/tb";
 
 const themes = {
 	light: {
@@ -342,21 +343,55 @@ const AdminSideBar = () => {
 									Customization
 								</Typography>
 							</div>
-							<Link href="/admin/create-course" passHref>
+							<Link href="/admin/hero" passHref>
 								<MenuItem
 									style={
 										dynamicStyle(
 											theme,
 											hasImage,
 											collapsed,
-											selected === "Create Course"
+											selected === "Hero"
 										).button
 									}
-									icon={<VideoCallIcon />}
-									active={selected === "Create Course"}
-									onClick={() => setSelected("Create Course")}
+									icon={<TbTableRow />}
+									active={selected === "Hero"}
+									onClick={() => setSelected("Hero")}
 								>
-									Create Course
+									Hero
+								</MenuItem>
+							</Link>
+							<Link href="/admin/faq" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "FAQ's"
+										).button
+									}
+									icon={<QuizIcon />}
+									active={selected === "FAQ's"}
+									onClick={() => setSelected("FAQ's")}
+								>
+									FAQ's
+								</MenuItem>
+							</Link>
+							<Link href="/admin/categories" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "Categories"
+										).button
+									}
+									icon={<WysiwygIcon />}
+									active={selected === "Categories"}
+									onClick={() => setSelected("Categories")}
+								>
+									Categories
 								</MenuItem>
 							</Link>
 							<div style={{ padding: "0 24px", marginBottom: "8px" }}>

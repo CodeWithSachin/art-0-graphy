@@ -27,17 +27,6 @@ const AllCourses = (props: Props) => {
 		useDeleteCourseMutation({});
 
 	useEffect(() => {
-		// if (updateError) {
-		// 	if ("data" in updateError) {
-		// 		const errorMessage = updateError as any;
-		// 		toast.error(errorMessage.data.message);
-		// 	}
-		// }
-		// if (updateSuccess) {
-		// 	refetch();
-		// 	toast.success("User role updated successfully");
-		// 	setOpen(false);
-		// }
 		if (deleteSuccess) {
 			refetch();
 			toast.success("Course Deleted successfully!");
@@ -121,64 +110,76 @@ const AllCourses = (props: Props) => {
 			{isLoading ? (
 				<Loader />
 			) : (
-				<Box
-					m="20px "
-					height="80vh"
-					sx={{
-						"& .MuiDataGrid-root": {
-							border: "none",
-							outline: "none",
-						},
-						"& .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon": {
-							color: theme === "dark" ? "#fff" : "#000",
-						},
-						"& .MuiDataGrid-sortIcon": {
-							color: theme === "dark" ? "#fff" : "#000",
-						},
-						"& .MuiDataGrid-row": {
-							color: theme === "dark" ? "#fff" : "#000",
-							borderBottom:
-								theme === "dark"
-									? "1px solid #ffffff30!important"
-									: "1px solid #ccc!important",
-						},
-						"& .MuiTablePagination-root": {
-							color: theme === "dark" ? "#fff" : "#000",
-						},
-						"& .MuiDataGrid-cell": {
-							borderBottom: "none",
-						},
-						"& .name-column--cell": {
-							color: theme === "dark" ? "#fff" : "#000",
-						},
-						"& .MuiDataGrid-columnHeaders": {
-							backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC",
-							borderBottom: "none",
-							color: theme === "dark" ? "#fff" : "#000",
-						},
-						"& .MuiDataGrid-virtualScroller": {
-							backgroundColor: theme === "dark" ? "#1F2A40" : "#F2F0F0",
-						},
-						"& .css-yrdy0g-MuiDataGrid-columnHeaderRow": {
-							color: theme === "dark" ? "#fff" : "#000",
-							backgroundColor:
-								theme === "dark" ? "#3e4396 !important" : "#A4A9FC !important",
-						},
-						"& .MuiDataGrid-footerContainer": {
-							color: theme === "dark" ? "#fff" : "#000",
-							borderTop: "none",
-							backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC",
-						},
-						"& .MuiCheckbox-root": {
-							color:
-								theme === "dark" ? "#b7ebde !important" : "#000 !important",
-						},
-						"& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-							color: "#fff !important",
-						},
-					}}
-				>
-					<DataGrid checkboxSelection rows={rows} columns={columns} />
+				<Box m="20px">
+					<div className="flex justify-end w-full">
+						<Link
+							className={`${style.button} !h-[35px] !w-[250px] !text-white hover:!decoration-none`}
+							href={"/admin/create-course"}
+						>
+							Create New Course
+						</Link>
+					</div>
+					<Box
+						m="20px 0 0"
+						height="80vh"
+						sx={{
+							"& .MuiDataGrid-root": {
+								border: "none",
+								outline: "none",
+							},
+							"& .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon": {
+								color: theme === "dark" ? "#fff" : "#000",
+							},
+							"& .MuiDataGrid-sortIcon": {
+								color: theme === "dark" ? "#fff" : "#000",
+							},
+							"& .MuiDataGrid-row": {
+								color: theme === "dark" ? "#fff" : "#000",
+								borderBottom:
+									theme === "dark"
+										? "1px solid #ffffff30!important"
+										: "1px solid #ccc!important",
+							},
+							"& .MuiTablePagination-root": {
+								color: theme === "dark" ? "#fff" : "#000",
+							},
+							"& .MuiDataGrid-cell": {
+								borderBottom: "none",
+							},
+							"& .name-column--cell": {
+								color: theme === "dark" ? "#fff" : "#000",
+							},
+							"& .MuiDataGrid-columnHeaders": {
+								backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC",
+								borderBottom: "none",
+								color: theme === "dark" ? "#fff" : "#000",
+							},
+							"& .MuiDataGrid-virtualScroller": {
+								backgroundColor: theme === "dark" ? "#1F2A40" : "#F2F0F0",
+							},
+							"& .css-yrdy0g-MuiDataGrid-columnHeaderRow": {
+								color: theme === "dark" ? "#fff" : "#000",
+								backgroundColor:
+									theme === "dark"
+										? "#3e4396 !important"
+										: "#A4A9FC !important",
+							},
+							"& .MuiDataGrid-footerContainer": {
+								color: theme === "dark" ? "#fff" : "#000",
+								borderTop: "none",
+								backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC",
+							},
+							"& .MuiCheckbox-root": {
+								color:
+									theme === "dark" ? "#b7ebde !important" : "#000 !important",
+							},
+							"& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+								color: "#fff !important",
+							},
+						}}
+					>
+						<DataGrid checkboxSelection rows={rows} columns={columns} />
+					</Box>
 				</Box>
 			)}
 			{open && (

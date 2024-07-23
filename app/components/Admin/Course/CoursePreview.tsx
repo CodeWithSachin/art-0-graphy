@@ -12,6 +12,7 @@ type Props = {
 	courseData: any;
 	setCourseData: (courseData: any) => void;
 	createCourseHandler: any;
+	isEdit: boolean;
 };
 
 const CoursePreview: React.FC<Props> = ({
@@ -20,6 +21,7 @@ const CoursePreview: React.FC<Props> = ({
 	courseData,
 	setCourseData,
 	createCourseHandler,
+	isEdit,
 }) => {
 	const discountedPricePercentage = (
 		((courseData.estimatedPrice - courseData.price) /
@@ -135,7 +137,7 @@ const CoursePreview: React.FC<Props> = ({
 				<h1 className="text-[25px] font-Poppins font-[600] dark:text-white text-black">
 					Course Details
 				</h1>
-				<p className="dark:text-white text-black text-[25px] mt-[20px] whitespace-pre-line overflow-hidden w-full">
+				<p className="dark:text-white text-black text-[15px] mt-[20px] whitespace-pre-line overflow-hidden w-full">
 					{courseData.description}
 				</p>
 			</div>
@@ -149,7 +151,7 @@ const CoursePreview: React.FC<Props> = ({
 					className={`${style.profileButton}`}
 					onClick={() => createCourseHandler()}
 				>
-					Next
+					{isEdit ? "Update" : "Create"}
 				</div>
 			</div>
 		</div>
