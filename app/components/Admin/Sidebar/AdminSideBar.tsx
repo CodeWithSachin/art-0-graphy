@@ -77,9 +77,9 @@ const themes = {
 
 // hex to rgba converter
 const hexToRgba = (hex: any, alpha: any) => {
-	const r = parseInt(hex.slice(1, 3), 16);
-	const g = parseInt(hex.slice(3, 5), 16);
-	const b = parseInt(hex.slice(5, 7), 16);
+	const r = parseInt(hex?.slice(1, 3), 16);
+	const g = parseInt(hex?.slice(3, 5), 16);
+	const b = parseInt(hex?.slice(5, 7), 16);
 
 	return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
@@ -109,9 +109,9 @@ const AdminSideBar = () => {
 			fontWeight: 400,
 		},
 		icon: {
-			color: themes[theme].menu.icon,
+			color: themes[theme]?.menu.icon,
 			[`&.${menuClasses.disabled}`]: {
-				color: themes[theme].menu.disabled.color,
+				color: themes[theme]?.menu.disabled.color,
 			},
 		},
 		SubMenuExpandIcon: {
@@ -121,28 +121,28 @@ const AdminSideBar = () => {
 			backgroundColor:
 				level === 0
 					? hexToRgba(
-							themes[theme].menu.menuContent,
+							themes[theme]?.menu.menuContent,
 							hasImage && !collapsed ? 0.4 : 1
 					  )
 					: "transparent",
 		}),
 		button: {
 			[`&.${menuClasses.disabled}`]: {
-				color: themes[theme].menu.disabled.color,
+				color: themes[theme]?.menu.disabled.color,
 			},
 			"&:hover": {
 				backgroundColor: hexToRgba(
-					themes[theme].menu.hover.backgroundColor,
+					themes[theme]?.menu.hover.backgroundColor,
 					hasImage ? 0.8 : 1
 				),
-				color: themes[theme].menu.hover.color,
+				color: themes[theme]?.menu.hover.color,
 			},
 			"&.active": {
 				backgroundColor: hexToRgba(
-					themes[theme].menu.hover.backgroundColor,
+					themes[theme]?.menu.hover.backgroundColor,
 					hasImage ? 0.8 : 1
 				),
-				color: themes[theme].menu.hover.color,
+				color: themes[theme]?.menu.hover.color,
 			},
 		},
 		label: ({ open }: any) => ({
@@ -159,19 +159,19 @@ const AdminSideBar = () => {
 		button: {
 			backgroundColor: isActive
 				? hexToRgba(
-						themes[theme].menu.hover.backgroundColor,
+						themes[theme]?.menu.hover.backgroundColor,
 						hasImage ? 0.8 : 1
 				  )
 				: "transparent",
 			color: isActive
-				? themes[theme].menu.hover.color
-				: themes[theme].menu.icon,
+				? themes[theme]?.menu.hover.color
+				: themes[theme]?.menu.icon,
 			"&:hover": {
 				backgroundColor: hexToRgba(
-					themes[theme].menu.hover.backgroundColor,
+					themes[theme]?.menu.hover.backgroundColor,
 					hasImage ? 0.8 : 1
 				),
-				color: themes[theme].menu.hover.color,
+				color: themes[theme]?.menu.hover.color,
 			},
 		},
 	});
@@ -194,11 +194,11 @@ const AdminSideBar = () => {
 				image="https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg"
 				breakPoint="md"
 				backgroundColor={hexToRgba(
-					themes[theme].sidebar.backgroundColor,
+					themes[theme]?.sidebar.backgroundColor,
 					hasImage ? 0.9 : 1
 				)}
 				rootStyles={{
-					color: themes[theme].sidebar.color,
+					color: themes[theme]?.sidebar.color,
 					height: "100vh",
 				}}
 			>
