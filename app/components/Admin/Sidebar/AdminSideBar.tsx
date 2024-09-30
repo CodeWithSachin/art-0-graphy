@@ -423,6 +423,35 @@ const AdminSideBar = () => {
 									Manage Teams
 								</MenuItem>
 							</Link>
+							<div style={{ padding: "0 24px", marginBottom: "8px" }}>
+								<Typography
+									variant="body2"
+									fontWeight={600}
+									style={{
+										opacity: collapsed ? 0 : 0.7,
+										letterSpacing: "0.5px",
+									}}
+								>
+									Analytics
+								</Typography>
+							</div>
+							<Link href="/admin/course-analytics" passHref>
+								<MenuItem
+									style={
+										dynamicStyle(
+											theme,
+											hasImage,
+											collapsed,
+											selected === "Course Analytics"
+										).button
+									}
+									icon={<PeopleOutlinedIcon />}
+									active={selected === "Course Analytics"}
+									onClick={() => setSelected("Course Analytics")}
+								>
+									Course Analytics
+								</MenuItem>
+							</Link>
 						</Menu>
 
 						<div

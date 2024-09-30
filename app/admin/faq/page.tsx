@@ -1,5 +1,5 @@
 "use client";
-import EditHero from "@/app/components/Admin/Customization/EditHero";
+import EditFaq from "@/app/components/Admin/Customization/EditFaq";
 import AdminDashBoard from "@/app/components/Admin/Dashboard/AdminDashBoard";
 import AdminSideBar from "@/app/components/Admin/Sidebar/AdminSideBar";
 import AdminProtected from "@/app/hooks/adminProtected";
@@ -23,7 +23,7 @@ const Page: React.FC<Props> = ({}) => {
 					</div>
 					<div className="w-[85%]">
 						<AdminDashBoard />
-						<EditHero />
+						<EditFaq />
 					</div>
 				</div>
 			</AdminProtected>

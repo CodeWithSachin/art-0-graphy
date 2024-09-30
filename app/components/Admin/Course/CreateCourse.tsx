@@ -34,6 +34,7 @@ const CreateCourse: React.FC<Props> = ({}) => {
 		price: "",
 		estimatedPrice: "",
 		tags: "",
+		categories: "",
 		level: "",
 		demoUrl: "",
 		thumbnail: "",
@@ -45,11 +46,13 @@ const CreateCourse: React.FC<Props> = ({}) => {
 			videoUrl: "",
 			title: "",
 			description: "",
+			videoLength: "",
 			videoSection: "Untitled Section",
 			links: [{ title: "", url: "" }],
 			suggestion: "",
 		},
 	]);
+	console.log("🚀 ~ courseContentData:", courseContentData);
 	const [courseData, setCourseData] = React.useState({});
 
 	const submitHandler = async () => {
@@ -137,6 +140,7 @@ const CreateCourse: React.FC<Props> = ({}) => {
 						courseData={courseData}
 						setCourseData={setCourseData}
 						createCourseHandler={createCourseHandler}
+						isEdit={false}
 					/>
 				)}
 			</div>

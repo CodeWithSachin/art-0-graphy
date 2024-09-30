@@ -67,6 +67,7 @@ const CourseContent: React.FC<Props> = ({
 				videoUrl: "",
 				title: "",
 				description: "",
+				videoLength: "",
 				videoSection: newVideoSection,
 				links: [{ title: "", url: "" }],
 				suggestion: "",
@@ -80,6 +81,7 @@ const CourseContent: React.FC<Props> = ({
 			!!!courseContentData[courseContentData.length - 1].title ||
 			!!!courseContentData[courseContentData.length - 1].description ||
 			!!!courseContentData[courseContentData.length - 1].videoUrl ||
+			!!!courseContentData[courseContentData.length - 1].videoLength ||
 			!!!courseContentData[courseContentData.length - 1].links[0].title ||
 			!!!courseContentData[courseContentData.length - 1].links[0].url
 		) {
@@ -103,6 +105,7 @@ const CourseContent: React.FC<Props> = ({
 			!!!courseContentData[courseContentData.length - 1].title ||
 			!!!courseContentData[courseContentData.length - 1].description ||
 			!!!courseContentData[courseContentData.length - 1].videoUrl ||
+			!!!courseContentData[courseContentData.length - 1].videoLength ||
 			!!!courseContentData[courseContentData.length - 1].links[0].title ||
 			!!!courseContentData[courseContentData.length - 1].links[0].url
 		) {
@@ -126,6 +129,7 @@ const CourseContent: React.FC<Props> = ({
 					return (
 						<>
 							<div
+								key={index}
 								className={`w-full bg-[#cdc8c817] p-4 ${
 									showInputSection ? "mt-10" : "mb-0"
 								}`}
@@ -230,6 +234,24 @@ const CourseContent: React.FC<Props> = ({
 													setCourseContentData(updatedData);
 												}}
 												placeholder="Project plan..."
+											/>
+										</div>
+										<div className="my-3">
+											<label htmlFor="videoLength" className={style.label}>
+												Video Length
+											</label>
+											<input
+												type="number"
+												name="videoLength"
+												id="videoLength"
+												className={`${style.input}`}
+												value={item.videoLength}
+												onChange={(e) => {
+													const updatedData = [...courseContentData];
+													updatedData[index].videoLength = e.target.value;
+													setCourseContentData(updatedData);
+												}}
+												placeholder="Video Length in Minutes"
 											/>
 										</div>
 										<div className="my-3">
